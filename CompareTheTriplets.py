@@ -28,8 +28,23 @@ The return array is [1, 1] with Alice's score first and Bob's second.
 """
 
 def compareTriplets(a, b):
-    hMapB = {}
+    countA = 0
+    countB = 0
+
+    for i in range(len(a)):
+        aVal = a[i]
+        bVal = b[i]
+        if aVal > bVal:
+            countA += 1
+        elif aVal < bVal:
+            countB += 1
+        else:
+            continue
     
-    for i in range(len(b)):
-        hMapB.update({i:b[i]})
-        
+    print([countA, countB])
+    return [countA, countB]
+
+A = [1, 2, 3]
+B = [3, 2, 1]
+
+compareTriplets(A,B)
